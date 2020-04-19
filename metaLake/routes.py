@@ -8,6 +8,8 @@ from metaLake.forms import (RegistrationForm, LoginForm, UpdateAccountForm,
 from metaLake.models import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
 from flask_mail import Message
+from flask_user import roles_required
+
 
 
 @app.route("/")
@@ -21,6 +23,12 @@ def home():
     form.email.data = current_user.email
     image_file = url_for('static', filename='profile_pics/' + current_user.image_file)
     return render_template('home.html', posts=posts,image_file=image_file, form=form)
+
+@app.route("/new_project")
+@login_required
+def newProject():
+    return render_template('new_project.html', title='New_Project')
+
 
 
 @app.route("/about")
@@ -101,7 +109,7 @@ def account():
                            image_file=image_file, form=form)
 
 
-@app.route("/post/new", methods=['GET', 'POST'])
+@app.route("/project/new", methods=['GET', 'POST'])
 @login_required
 def new_post():
     form = PostForm()
@@ -111,7 +119,7 @@ def new_post():
         db.session.commit()
         flash('Your post has been created!', 'success')
         return redirect(url_for('home'))
-    return render_template('create_post.html', title='New Post',
+    return render_template('create_project.html', title='New Post',
                            form=form, legend='New Post')
 
 

@@ -1,43 +1,111 @@
 body {
-  background: #fafafa;
   color: #333333;
   margin-top: 5rem;
+  background-color: #ffffff; /* whole page default color */
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #444444;
+  color: black;
+}
+/* Company Title*/
+.navbar .navbar-brand {
+  color: black;
+  font-weight: bold;
 }
 
 .bg-steel {
-  background-color: black;
-  height: 45px;
-  -moz-box-shadow:    3px 3px 5px 6px #ccc;
-  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
-  box-shadow:         3px 3px 5px 6px #ccc;
-}
-
-.site-header .navbar-nav .nav-link {
-  color: #cbd5db;
+   background-color: #f9f9f9; /* top menu background color*/
+   min-height: 54px;
+   border-bottom: 1px solid #e9eaeb;
+   color: black;
+   font-size: 15px;
+   font-feature-settings: "liga" 0,"kern";
+   text-rendering: optimizeLegibility;
+   letter-spacing: .02em;
+   padding-left: 15px;
+   padding-right: 15px;
 }
 
 .site-header .navbar-nav .nav-link:hover {
-  color: #ffffff;
+  color: black;
 }
 
 .site-header .navbar-nav .nav-link.active {
   font-weight: 500;
 }
-.site-header .navbar-nav input[type=text] {
-    border: 1px solid #ccc;
-    width: 500px;
-  }
 
-.site-header .account-img {
-    height: 54px;
-    min-width: : 790px;
-    margin-right: 50%;
-    margin-bottom: 0%;
-  }
+.dropbtn {
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: absolute;
+  margin-top: 0;
+  font-size: 13px;
+  letter-spacing: .06em;
+  padding: 6.75px 0;
+  position: relative;
+  display: inline-block;
+  padding-inline-start: 40px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  padding-inline-start: 40px;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+.subNavbar {
+  position: fixed;
+  background-color: white;
+  top: 54px; /* Position the navbar at the top of the page */
+  width: 100%;
+
+}
+
+.subNavbar a {
+  color: black;
+  padding: 8px 2px;
+  text-decoration: none;
+  display: block;
+  padding-inline-start: 40px;
+}
+
+
+.sideContainer .content-section {
+  display: block;
+  background-color: black;
+  color: black;
+  height: 100%;
+  width: 100%;
+
+}
+
 
 .content-section {
   background: #ffffff;
@@ -46,6 +114,11 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 3px;
   margin-bottom: 20px;
 }
+
+/* Navigation links */
+
+
+
 
 .article-title {
   color: #444444;
@@ -92,4 +165,15 @@ a.article-title:hover {
 
 .account-heading {
   font-size: 2.5rem;
+}
+
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #f9f9f9;
+  color: #333333;
+  text-align: center;
+  border-top: 1px solid #e9eaeb;
 }
