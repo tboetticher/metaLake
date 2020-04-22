@@ -11,19 +11,21 @@ h1, h2, h3, h4, h5, h6 {
 .navbar .navbar-brand {
   color: black;
   font-weight: bold;
+  padding-left: 45px;
+  font-size: 18px;
 }
 
 .bg-steel {
    background-color: #f9f9f9; /* top menu background color*/
    min-height: 54px;
    border-bottom: 1px solid #e9eaeb;
-   color: black;
+   color: #8c8c8c;
    font-size: 15px;
    font-feature-settings: "liga" 0,"kern";
    text-rendering: optimizeLegibility;
    letter-spacing: .02em;
-   padding-left: 15px;
-   padding-right: 15px;
+   padding-right: 45px;
+
 }
 
 .site-header .navbar-nav .nav-link:hover {
@@ -85,25 +87,58 @@ h1, h2, h3, h4, h5, h6 {
   background-color: white;
   top: 54px; /* Position the navbar at the top of the page */
   width: 100%;
+  text-align: right;
+  padding-right: 75px;
 
 }
 
 .subNavbar a {
-  color: black;
-  padding: 8px 2px;
+  display:inline-block;
+  color: #8c8c8c;
+  padding: 8px 0px;
   text-decoration: none;
-  display: block;
   padding-inline-start: 40px;
+  font-feature-settings: "liga" 0,"kern";
+  text-rendering: optimizeLegibility;
+  letter-spacing: .02em;
+}
+
+.subNavbar .nav-link:hover {
+  color: black;
+}
+
+.subNavbar .nav-link.active {
+  font-weight: 500;
 }
 
 
-.sideContainer .content-section {
-  display: block;
-  background-color: black;
-  color: black;
-  height: 100%;
-  width: 100%;
 
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: -1;
+  left: 0;
+  background-color: #111;
+  padding-top: 45px;
+  border-right: 1px solid #e9eaeb;
+  background-color: white;
+  display: block;
+  list-style-type: disc;
+
+  list-style: none;
+}
+
+.sidenav li {
+  padding: 6px 6px 18px 32px;
+  font-feature-settings: "liga" 0,"kern";
+  font-size: 16px;
+  color: #818181;
+  justify-content: center;
+}
+
+.sidenav a:hover {
+  color: black;
 }
 
 
@@ -114,11 +149,6 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 3px;
   margin-bottom: 20px;
 }
-
-/* Navigation links */
-
-
-
 
 .article-title {
   color: #444444;
@@ -165,15 +195,4 @@ a.article-title:hover {
 
 .account-heading {
   font-size: 2.5rem;
-}
-
-.footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #f9f9f9;
-  color: #333333;
-  text-align: center;
-  border-top: 1px solid #e9eaeb;
 }

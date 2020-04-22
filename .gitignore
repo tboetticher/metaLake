@@ -1,0 +1,5 @@
+
+.DS_Store
+metaProject/*
+*.pyc
+.DS_Store

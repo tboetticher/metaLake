@@ -10,20 +10,19 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-    <script type="text/javascript" src="http://livejs.com/live.js"></script>
+    <!-- <script type="text/javascript" src="http://livejs.com/live.js"></script> --> <!-- Live updates on website -->
 
 
     {% if title %}
-        <title>MetaLake - {{ title }}</title>
+        <title>StatIQ - {{ title }}</title>
     {% else %}
-        <title>MetaLake</title>
+        <title>StatIQ</title>
     {% endif %}
 </head>
 <body>
     <header class="site-header">
-      <nav class="navbar navbar-expand-md navbar-light bg-steel fixed-top">
-        <div class="container">
-          <a class="navbar-brand mr-4" href="{{ url_for('home') }}"> StatIQ</a>
+      <div class="navbar navbar-expand-md navbar-light bg-steel fixed-top">
+          <a class="navbar-brand mr-4" href="{{ url_for('home') }}">StatIQ</a>
 
 
 
@@ -41,14 +40,15 @@
               {% if current_user.is_authenticated %}
                 <!-- <a class="nav-item nav-link" href="{{ url_for('new_post') }}">New Post</a> -->
 
-                <a class="nav-item nav-link"><i class="far fa-bell"></i> </a>  <!-- Issue   it collapses with the opther menu items -->
+                <a class="nav-item nav-link" href="{{ url_for('newProject') }}"><i class="far fa-bell"></i> </a>  <!-- Issue   it collapses with the opther menu items -->
                 <a class="nav-item nav-link" href="{{ url_for('newProject') }}"> New Project </a>
-
+                <a class="nav-item nav-link" href="{{ url_for('newProject') }}"> Manage Projects </a>
 
                 <div class="nav-item nav-link dropdown">
                   <a onclick="myFunction()" class="dropbtn">{{ current_user.username }} <i class="fas fa-caret-down"></i></a>
                   <div id="myDropdown" class="dropdown-content">
                     <a href="{{ url_for('account') }}">Account Settings</a>
+                    <a href="{{ url_for('account') }}">help</a>
                     <a href="{{ url_for('logout') }}">Logout</a>
                   </div>
                 </div>
@@ -59,7 +59,6 @@
               {% endif %}
             </div>
           </div>
-        </div>
       </nav>
 
     </header>
@@ -109,7 +108,4 @@
       }
 </script>
 </body>
-<div class="footer">
-  <p>Footer</p>
-</div>
 </html>
